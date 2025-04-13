@@ -143,7 +143,14 @@ closer together in the vector space.
 - `pg-vector` extension for vector data storage, installs on top of the server.
 - `CREATE EXTENSION IF NOT EXISTS vector`
 
-#### Use Case
+### Weaviate
+- [Github](https://github.com/weaviate/weaviate)
+- [Weaviate Academy](https://weaviate.io/developers/academy)
+- [Github Code](https://github.com/anant-opensource/introduction-to-ai-native-vector-databases-4470531)
+- [CLIP](https://weaviate.io/developers/weaviate/model-providers/transformers/embeddings-multimodal) - multi-model that understands multiple types/modalities of data
+- The above model can be used for creating embeddings and later used for text, image search etc
+
+### Use Case
 
 - Extract all the blogs and create an embedding
 - Have a table with columns `id, slug, title and embeddings`
@@ -156,8 +163,36 @@ where id!=20 -- this is the article that the user is currently on
 order by embedding <-> (select embedding from articles where id=20)
 ```
 
-## References
+- Image search by text or image itself
+- Ecommerce - recommendation system
+  - product class is vectorized using an image or text description
+  - use cross references e.g. (user (name, email, liked product) -> product (name, price) -> brand (name, headquarters))
+  - enable relations between classes
+  - use graph references to capture user interest
+  - use user and product classes of objects to produce recommendations
+  - user class references products bought/liked
+  - generate vectors using graph references: Ref2Vec
+  - generate vectors for the user class using vectors of liked products
+  - user identity is created based on products they have interacted with
+  - upto-to-date representations of user based on interactions
+  - [Github repo for recommendation system](https://github.com/weaviate/ref2vec-ecommerce-demo)
+- Hybrid search
+  - combining semantic search with keywords, performing both search in parallel and combining the results
+- RAG
+- 
 
+### Scalability
+- We are giving up on accuracy for faster performance when using algorithms like ANN
+- **HNSW** (Hierarchical Navigable Small Worlds) Most popular algorithm used for approximate search of nearest neighbors.
+- Few metrics used to measure performance of Vector databases
+  - Recall (higher the better) - The number of retrieved nearest neighbors by approximate nearest neighbours (ANN) over the number of total nearest neighbors if there were no approximations
+  - QPS (Query Per Second) - Higher the better - higher QPS results in lower recall
+  - Memory - Vector DB uses lot of memory
+- 
+
+
+
+## References
 - [Microsoft - Understanding Vector Databases](assets/data/data-engineering-playbook.pdf)
 
 
