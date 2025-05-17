@@ -84,12 +84,12 @@
 - OAuth issues access tokens to the app
 - OpenID issues id tokens to the app
 
-  | Feature        | **OAuth 2.0**                      | **OpenID Connect (OIDC)**                         |
-      | -------------- | ---------------------------------- | ------------------------------------------------- |
-  | Purpose        | **Authorization** (access control) | **Authentication + Authorization**                |
-  | User Identity? | ❌ No                               | ✅ Yes (provides user info like name, email, etc.) |
-  | Built On       | Standalone protocol                | Built on top of OAuth 2.0                         |
-  | Analogy        | Hotel key for amenities            | Hotel key + your ID badge                         |
+| Feature        | **OAuth 2.0**                      | **OpenID Connect (OIDC)**                         |
+ |----------------|------------------------------------|---------------------------------------------------|
+| Purpose        | **Authorization** (access control) | **Authentication + Authorization**                |
+| User Identity? | ❌ No                               | ✅ Yes (provides user info like name, email, etc.) |
+| Built On       | Standalone protocol                | Built on top of OAuth 2.0                         |
+| Analogy        | Hotel key for amenities            | Hotel key + your ID badge                         |
 
 ## B. API Security Concepts
 
