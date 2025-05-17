@@ -77,6 +77,7 @@
   query time, you can specify options for exhaustive search, even if the vector field is indexed for HNSW.
 
 ### Concept of Distances
+
 - Euclidean (L2) - shortest distance between two vectors
 - Manhattan (L1) - measures distance between two vectors only if you can move along the dimension of your data.
 - Cosine - how similar the directions are and doesn't care about the length of the vector
@@ -144,10 +145,12 @@ closer together in the vector space.
 - `CREATE EXTENSION IF NOT EXISTS vector`
 
 ### Weaviate
+
 - [Github](https://github.com/weaviate/weaviate)
 - [Weaviate Academy](https://weaviate.io/developers/academy)
 - [Github Code](https://github.com/anant-opensource/introduction-to-ai-native-vector-databases-4470531)
-- [CLIP](https://weaviate.io/developers/weaviate/model-providers/transformers/embeddings-multimodal) - multi-model that understands multiple types/modalities of data
+- [CLIP](https://weaviate.io/developers/weaviate/model-providers/transformers/embeddings-multimodal) - multi-model that
+  understands multiple types/modalities of data
 - The above model can be used for creating embeddings and later used for text, image search etc
 
 ### Use Case
@@ -166,7 +169,8 @@ order by embedding <-> (select embedding from articles where id=20)
 - Image search by text or image itself
 - Ecommerce - recommendation system
   - product class is vectorized using an image or text description
-  - use cross references e.g. (user (name, email, liked product) -> product (name, price) -> brand (name, headquarters))
+  - use cross references e.g. (user (name, email, liked product) -> product (name, price) -> brand (name,
+    headquarters))
   - enable relations between classes
   - use graph references to capture user interest
   - use user and product classes of objects to produce recommendations
@@ -179,21 +183,23 @@ order by embedding <-> (select embedding from articles where id=20)
 - Hybrid search
   - combining semantic search with keywords, performing both search in parallel and combining the results
 - RAG
-- 
+-
 
 ### Scalability
+
 - We are giving up on accuracy for faster performance when using algorithms like ANN
-- **HNSW** (Hierarchical Navigable Small Worlds) Most popular algorithm used for approximate search of nearest neighbors.
+- **HNSW** (Hierarchical Navigable Small Worlds) Most popular algorithm used for approximate search of nearest
+  neighbors.
 - Few metrics used to measure performance of Vector databases
-  - Recall (higher the better) - The number of retrieved nearest neighbors by approximate nearest neighbours (ANN) over the number of total nearest neighbors if there were no approximations
+  - Recall (higher the better) - The number of retrieved nearest neighbors by approximate nearest neighbours (ANN)
+    over the number of total nearest neighbors if there were no approximations
   - QPS (Query Per Second) - Higher the better - higher QPS results in lower recall
   - Memory - Vector DB uses lot of memory
-- 
-
-
+-
 
 ## References
-- [Microsoft - Understanding Vector Databases](assets/data/data-engineering-playbook.pdf)
+
+- [Microsoft - Understanding Vector Databases](../../assets/data/data-engineering-playbook.pdf)
 
 
 
